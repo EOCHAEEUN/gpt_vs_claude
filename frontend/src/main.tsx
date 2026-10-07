@@ -6,6 +6,7 @@ import 'monaco-editor/esm/vs/basic-languages/python/python.contribution'
 import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker'
 import App from './App'
 import './styles/global.css'
+import './styles/ai.css'
 
 self.MonacoEnvironment = { getWorker: () => new EditorWorker() }
 loader.config({ monaco })

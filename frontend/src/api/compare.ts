@@ -1,9 +1,9 @@
 import type { CompareRequest, Comparison } from '../types/comparison'
 
-const baseUrl = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '')
+export const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL ?? '').replace(/\/$/, '')
 
 export async function compareCodes(input: CompareRequest): Promise<Comparison> {
-  const response = await fetch(`${baseUrl}/api/compare`, {
+  const response = await fetch(`${apiBaseUrl}/api/compare`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(input),

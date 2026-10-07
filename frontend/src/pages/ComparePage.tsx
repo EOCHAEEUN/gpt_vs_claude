@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { DiffEditor } from '@monaco-editor/react'
 import { compareCodes } from '../api/compare'
+import { AITutor } from '../components/AITutor'
 import { CodePanel } from '../components/CodePanel'
 import { ComparisonSummary } from '../components/ComparisonSummary'
 import { Header } from '../components/Header'
@@ -73,8 +74,9 @@ export function ComparePage() {
         <section className="result-section diff-section"><div className="section-heading"><div><span className="eyebrow">05 / SOURCE DIFF</span><h2>텍스트 차이</h2></div><button className="secondary-button" onClick={() => setDiffOpen(!diffOpen)}>{diffOpen ? 'Close Diff View' : 'Open Diff View'}</button></div>
           {diffOpen && <div className="diff-shell"><DiffEditor height="470px" language="python" theme="vs-light" original={comparedCode.a} modified={comparedCode.b} options={{ readOnly: true, renderSideBySide: true, minimap: { enabled: false }, automaticLayout: true, scrollBeyondLastLine: false }} /></div>}
         </section>
+        <AITutor comparison={comparison} codeA={comparedCode.a} codeB={comparedCode.b} />
       </div>}
-      <footer>Code Contrast <span>·</span> V0.1 <span>·</span> Python static analysis</footer>
+      <footer>Code Contrast <span>·</span> V0.2 <span>·</span> Python static analysis + local AI tutor</footer>
     </main>
   </>
 }
