@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Code Contrast local dependencies and build output
+.venv/
+.uv-cache/
+.npm-cache/
+.tools/
+node_modules/
+.env.local
